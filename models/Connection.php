@@ -5,10 +5,11 @@ use PDO;
 class Connection
 {
     private static $Instance;
+    private $connection;
 
     private function __construct()
     {
-        Self::$Instance = new PDO('mysql:host=localhost;dbname=immobilier', 'root', '');
+        $this->connection = new PDO('mysql:host=localhost;dbname=immobilier', 'root', '');
     }
 
     public static function getInstance():Connection
@@ -18,5 +19,10 @@ class Connection
             Self::$Instance = new Connection();
         }
         return Self::$Instance;
+    }
+
+    public function getConnection()
+    {
+        return $this->connection;
     }
 }

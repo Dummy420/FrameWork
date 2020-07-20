@@ -2,4 +2,4 @@
 require __DIR__ . '/vendor/autoload.php';
 
 MyMvc\Requests::setTable('maison');
-MyMvc\Requests::SelectAll();
+MyMvc\Requests::Insert(['la', 'la', '5']);
